@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDFMind AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+  <div class="logo">📘</div>
+  <div>
+    <h1>PDFMind <span>AI</span></h1>
+    <p class="tag">Intelligent Document Understanding Platform</p>
+  </div>
+</div>
+    <label class="upload-btn">
+      + Upload PDF
+      <input type="file" id="fileInput" accept="application/pdf" multiple hidden>
+    </label>
+    <p id="uploadMsg" class="msg"></p>
+
+    <h3>Your Documents</h3>
+    <p class="hint">Tick documents to use. None ticked = all documents.</p>
+    <ul id="docList"></ul>
+
+    <h3>Quiz History</h3>
+    <ul id="history" class="history"></ul>
+  </aside>
+
+  <main>
+    <nav class="tabs">
+      <button class="tab active" data-tab="chat">Chat</button>
+      <button class="tab" data-tab="summary">Summary</button>
+      <button class="tab" data-tab="quiz">Quiz</button>
+      <button class="tab" data-tab="cards">Flashcards</button>
+    </nav>
+
+    <section id="chat" class="panel active">
+      <button class="clear-btn" id="clearBtn">Clear chat</button>
+      <div id="messages" class="messages"></div>
+      <div class="inputbar">
+        <input id="question" type="text" placeholder="Ask a question about your PDFs...">
+        <button id="sendBtn">Send</button>
+      </div>
+    </section>
+
+    <section id="summary" class="panel">
+      <button class="action" id="summaryBtn">Generate Summary</button>
+      <div id="summaryBox" class="box"></div>
+    </section>
+
+    <section id="quiz" class="panel">
+      <button class="action" id="quizBtn">Generate Quiz</button>
+      <div id="quizBox"></div>
+    </section>
+
+    <section id="cards" class="panel">
+      <button class="action" id="cardsBtn">Generate Flashcards</button>
+      <p class="hint">Click a card to flip it.</p>
+      <div id="cardsBox" class="cards"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
